@@ -113,10 +113,8 @@ static void signal_handler(int signo)
 {
 	connman_error("Aborting (signal %d) [%s]", signo, program_exec);
 
-	
-	#ifdef HAVE_EXECINFO_H
 	print_backtrace(program_path, program_exec, 2);
-    #endif /* HAVE_EXECINFO_H */
+
 	exit(EXIT_FAILURE);
 }
 
